@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Schedule from './Schedule';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [showSched, setShowSched] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const handleOptionSelected = (e) => {
+    setSelectedDate(e.target.value);
+    setShowSched(true);
+  }
+
+  if (showSched) {
+    return (
+      <Schedule selected_date={selectedDate} />
+    );
+  }
+  else {
+    return (
+      <div className="App">
+      <label>
+        Choose a date: &nbsp;
+        <select defaultValue="choose a day" onChange={(e) => handleOptionSelected(e)}>
+          <option value="choose a day">Date</option>
+          <option value="11/11/2024">11/11/2024</option>
+          <option value="11/12/2024">11/12/2024</option>
+          <option value="11/13/2024">11/13/2024</option>
+        </select>
+      </label>
+      </div>
+    );
+  }
 }
 
 export default App;
