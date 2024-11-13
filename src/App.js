@@ -12,9 +12,15 @@ function App() {
     setShowSched(true);
   }
 
+  const handleGoBack = () => {
+    setShowSched(false);
+    setSelectedDate("");
+  }
+
   if (showSched) {
     return (
-      <Schedule selected_date={selectedDate} />
+      <Schedule selected_date={selectedDate} 
+                goBack={() => handleGoBack}/>
     );
   }
   else {
