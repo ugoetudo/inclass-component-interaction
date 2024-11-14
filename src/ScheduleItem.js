@@ -54,4 +54,4 @@ function ScheduleItem ({event_start, event_end, event_name, attendees, event_own
     }
 }
 
-module.exports = ScheduleItem;
+export default ScheduleItem;

@@ -34,4 +34,4 @@ function Schedule ({selected_date, goBack}) {
     );
 }
 
-module.exports = Schedule;
+export default Schedule;
