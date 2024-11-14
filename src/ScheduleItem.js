@@ -30,7 +30,7 @@ function ScheduleItem ({event_start, event_end, event_name, attendees, event_own
                         <tr>
                             <td>Organizer:</td><td>{event_owner}</td>
                         </tr>
-                        <input type='button' value='Details' onClick={handleModalShow()}></input>
+                        <input type='button' value='Details' onClick={handleModalShow}></input>
                     </tbody>
                 </table>
                 <div><br></br></div>
@@ -39,7 +39,7 @@ function ScheduleItem ({event_start, event_end, event_name, attendees, event_own
     }
     else {
         return (
-            <Modal show={modal_active} onHide={handleModalClose()}>
+            <Modal show={modal_active} onHide={handleModalClose}>
                 <Modal.Header>
                     <Modal.Title>Meeting Description</Modal.Title>
                 </Modal.Header>
@@ -47,7 +47,7 @@ function ScheduleItem ({event_start, event_end, event_name, attendees, event_own
                     {desc}
                 </Modal.Body>
                 <Modal.Footer>
-                    <input type="button" value="Done" onClick={handleModalClose()}></input>
+                    <input type="button" value="Done" onClick={handleModalClose}></input>
                 </Modal.Footer>
             </Modal>
         )
